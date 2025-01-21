@@ -22,3 +22,4 @@ LOCAL_PATH := device/tinno/U318AA
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 
+# Inherit from the common TWRP configuration
