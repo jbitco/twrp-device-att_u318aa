@@ -22,4 +22,13 @@ LOCAL_PATH := device/tinno/U318AA
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 
-# Inherit from the common TWRP configuration
+
+
+$(call inherit-product, vendor/twrp/config/common.mk)
+
+# Device specific settings
+TARGET_ARCH := arm64
+TARGET_DEVICE := U318AA
+
+# Include the device-specific configuration
+include $(LOCAL_PATH)/proprietary-files.txt

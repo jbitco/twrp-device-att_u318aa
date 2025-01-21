@@ -144,8 +144,5 @@ TARGET_USES_LOGD := true
 # Excludes
 TW_EXCLUDE_TWRPAPP := true
 
-# Hack: prevent anti rollback
-PLATFORM_SECURITY_PATCH := 2099-12-31
-PLATFORM_VERSION := 20.1.0
 # PBRP Beta Build
 BETA_BUILD := true

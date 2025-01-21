@@ -16,11 +16,22 @@
 # limitations under the License.
 #
 
+# Define LOCAL_PATH
+LOCAL_PATH := $(call my-dir)
+
+# Ensure my-dir function is defined
+my-dir := $(dir $(lastword $(MAKEFILE_LIST)))
+
+# Define TARGET_DEVICE_DIR
+TARGET_DEVICE_DIR := $(LOCAL_PATH)
+
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+$(call inherit-product, $(TARGET_DEVICE_DIR)/product/aosp_base.mk)
+# Include the full Android build system.
+include $(BUILD_PRODUCT)/build/make/core/product_config.mk
 
 # Inherit from U318AA device
-$(call inherit-product, device/tinno/U318AA/device.mk)
+$(call inherit-product, $(LOCAL_PATH)/device/tinno/U318AA/device.mk)
 
 # Inherit some common TWRP stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
