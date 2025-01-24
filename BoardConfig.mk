@@ -144,5 +144,6 @@ TARGET_USES_LOGD := true
 # Excludes
 TW_EXCLUDE_TWRPAPP := true
 
+# Hack: prevent anti rollback
 # PBRP Beta Build
 BETA_BUILD := true
